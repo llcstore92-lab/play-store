@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>LLC STORE - Jual & Beli Koin Game | Higgs Domino, Royal Domino, Berfish, Bos Domino - Google Play</title>
     <meta name="description" content="Top up dan jual koin game Higgs Domino, Royal Domino, Berfish, Bos Domino. Rating 4.7 dari 50+ pengguna, unduhan 50.000+. Proses 1-2 menit. Aman dan terpercaya.">
-    <meta name="keywords" content="LLC store, top up higgs domino, jual koin higgs island, beli koin royal domino, top up berfish, bos domino koin, jual koin game">
+    <meta name="keywords" content="LLC store, top up higgs domino, jual koin higgs island, beli koin royal domino, top up berfish, bos domino koin">
     <meta name="theme-color" content="#1a73e8">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a73e8'/><text x='50' y='67' font-size='50' text-anchor='middle' fill='white' font-weight='bold'>L</text></svg>">
     <style>
         * {
             margin: 0;
@@ -62,10 +61,6 @@
             display: flex;
             align-items: center;
             gap: 8px;
-        }
-
-        .search-bar span:first-child {
-            font-size: 18px;
         }
 
         /* Container */
@@ -226,11 +221,6 @@
             gap: 12px;
             overflow-x: auto;
             padding-bottom: 8px;
-            scrollbar-width: thin;
-        }
-
-        .screenshot-list::-webkit-scrollbar {
-            height: 4px;
         }
 
         .screenshot-list img {
@@ -281,35 +271,71 @@
             font-weight: 500;
         }
 
-        .price-table {
-            overflow-x: auto;
-            margin: 16px 0;
-            border-radius: 16px;
-            border: 1px solid #e8eaed;
+        /* Price Cards - Sederhana hanya 1B */
+        .price-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 20px 0;
         }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 13px;
-        }
-
-        th, td {
-            border-bottom: 1px solid #e8eaed;
-            padding: 10px 12px;
-            text-align: center;
-        }
-
-        th {
+        .price-card {
             background: #f8f9fa;
-            font-weight: 600;
+            border-radius: 20px;
+            padding: 16px;
+            border: 1px solid #e8eaed;
+            transition: transform 0.2s;
         }
 
-        .game-title {
-            font-size: 16px;
-            font-weight: 600;
-            margin: 20px 0 8px;
+        .price-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .game-name {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
             color: #1a73e8;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e8eaed;
+        }
+
+        .price-row:last-child {
+            border-bottom: none;
+        }
+
+        .price-label {
+            font-weight: 500;
+            color: #5f6368;
+        }
+
+        .price-value {
+            font-weight: 700;
+            font-size: 18px;
+            color: #202124;
+        }
+
+        .price-value.buy {
+            color: #34a853;
+        }
+
+        .price-value.sell {
+            color: #ea4335;
+        }
+
+        .rate-info {
+            font-size: 12px;
+            color: #5f6368;
+            margin-top: 10px;
+            text-align: center;
+            padding-top: 8px;
+            border-top: 1px dashed #dadce0;
         }
 
         /* Reviews */
@@ -382,11 +408,12 @@
             min-width: 80px;
         }
 
-        .similar-item img {
+        .similar-item div {
             width: 64px;
             height: 64px;
-            border-radius: 16px;
             background: #e8eaed;
+            border-radius: 16px;
+            margin: 0 auto;
         }
 
         .similar-item p {
@@ -445,75 +472,6 @@
             text-decoration: none;
         }
 
-        /* Modal Transaksi */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 28px;
-            max-width: 400px;
-            width: 90%;
-            padding: 24px;
-            position: relative;
-        }
-
-        .modal-header {
-            font-size: 20px;
-            font-weight: 500;
-            margin-bottom: 16px;
-        }
-
-        .modal .form-group {
-            margin-bottom: 16px;
-        }
-
-        .modal .form-group label {
-            display: block;
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 6px;
-        }
-
-        .modal .form-group input, .modal .form-group select {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #dadce0;
-            border-radius: 12px;
-            font-size: 14px;
-        }
-
-        .modal .btn-submit {
-            background: #1a73e8;
-            color: white;
-            border: none;
-            padding: 14px;
-            width: 100%;
-            border-radius: 28px;
-            font-weight: 600;
-            font-size: 16px;
-            cursor: pointer;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 16px;
-            right: 20px;
-            font-size: 24px;
-            cursor: pointer;
-            color: #5f6368;
-        }
-
         @media (max-width: 550px) {
             .app-header {
                 flex-direction: column;
@@ -534,6 +492,9 @@
             }
             .search-bar span:last-child {
                 display: none;
+            }
+            .price-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -589,11 +550,11 @@
         <div class="screenshot-list">
             <img src="https://files.catbox.moe/d8oje0.jpg" alt="Harga koin Higgs Domino">
             <img src="https://files.catbox.moe/5swrkh.jpg" alt="Metode pembayaran">
-            <img src="https://files.catbox.moe/5swrkh.jpg" alt="Form transaksi">
+            <img src="https://files.catbox.moe/5swrkh.jpg" alt="Informasi harga">
         </div>
     </div>
 
-    <!-- DESKRIPSI + TABEL HARGA -->
+    <!-- DESKRIPSI + HARGA 1B PER GAME -->
     <div class="description">
         <h2>Tentang aplikasi ini</h2>
         
@@ -609,55 +570,82 @@
         Rating 4.7 dari 50+ pengguna • Telah diunduh 50.000+ kali<br>
         Proses ±1-2 menit setelah pembayaran</p>
 
-        <!-- HIGGS DOMINO -->
-        <div class="game-title">🎮 HIGGS DOMINO</div>
-        <div class="price-table">
-            <table>
-                <thead>
-                    <tr><th>Jumlah Koin</th><th>Beli (Rp)</th><th>Jual (Rp)</th></tr>
-                </thead>
-                <tbody>
-                    <tr><td>100M</td><td>7.350</td><td>5.196</td></tr>
-                    <tr><td>200M</td><td>14.400</td><td>10.483</td></tr>
-                    <tr><td>300M</td><td>21.150</td><td>15.859</td></tr>
-                    <tr><td>400M</td><td>27.599</td><td>21.324</td></tr>
-                    <tr><td>500M</td><td>33.750</td><td>26.880</td></tr>
-                    <tr><td>600M</td><td>39.600</td><td>32.524</td></tr>
-                    <tr><td>700M</td><td>45.150</td><td>38.259</td></tr>
-                    <tr><td>800M</td><td>50.400</td><td>44.083</td></tr>
-                    <tr><td>900M</td><td>55.349</td><td>49.996</td></tr>
-                    <tr><td>1B</td><td>60.000</td><td>56.000</td></tr>
-                </tbody>
-            </table>
-        </div>
+        <h3>💰 Harga 1 Miliar (1B) Koin per Game</h3>
+        
+        <div class="price-grid">
+            <!-- Higgs Domino -->
+            <div class="price-card">
+                <div class="game-name">🎮 HIGGS DOMINO</div>
+                <div class="price-row">
+                    <span class="price-label">Beli 1B Koin</span>
+                    <span class="price-value buy">Rp 60.000</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-label">Jual 1B Koin</span>
+                    <span class="price-value sell">Rp 56.000</span>
+                </div>
+                <div class="rate-info">Rate: Beli 60K/B · Jual 56K/B</div>
+            </div>
 
-        <div class="game-title">👑 ROYAL DOMINO</div>
-        <div class="price-table">
-            <table>
-                <thead><tr><th>Jumlah Koin</th><th>Beli (Rp)</th><th>Jual (Rp)</th></tr></thead>
-                <tbody>
-                    <tr><td>100M</td><td>7.840</td><td>5.660</td></tr>
-                    <tr><td>200M</td><td>15.360</td><td>11.419</td></tr>
-                </tbody>
-            </table>
-        </div>
+            <!-- Royal Domino -->
+            <div class="price-card">
+                <div class="game-name">👑 ROYAL DOMINO</div>
+                <div class="price-row">
+                    <span class="price-label">Beli 1B Koin</span>
+                    <span class="price-value buy">Rp 64.000</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-label">Jual 1B Koin</span>
+                    <span class="price-value sell">Rp 61.000</span>
+                </div>
+                <div class="rate-info">Rate: Beli 64K/B · Jual 61K/B</div>
+            </div>
 
-        <h3>💰 Fitur Jual Koin</h3>
-        <p>Punya koin sisa? Jual ke LLC STORE. Harga kompetitif, transfer langsung ke rekening/e-wallet (Dana, OVO, GoPay, Bank). Minimal jual 50.000 koin.</p>
+            <!-- Berfish -->
+            <div class="price-card">
+                <div class="game-name">🐟 BERFISH</div>
+                <div class="price-row">
+                    <span class="price-label">Beli 1B Koin</span>
+                    <span class="price-value buy">Rp 35.000</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-label">Jual 1B Koin</span>
+                    <span class="price-value sell">Rp 31.000</span>
+                </div>
+                <div class="rate-info">Rate: Beli 35K/B · Jual 31K/B</div>
+            </div>
+
+            <!-- Bos Domino -->
+            <div class="price-card">
+                <div class="game-name">🎲 BOS DOMINO</div>
+                <div class="price-row">
+                    <span class="price-label">Beli 100B Koin*</span>
+                    <span class="price-value buy">Rp 382.000</span>
+                </div>
+                <div class="price-row">
+                    <span class="price-label">Jual 100B Koin*</span>
+                    <span class="price-value sell">Rp 286.500</span>
+                </div>
+                <div class="rate-info">Rate: Beli 4K/B · Jual 3K/B (Min 10B)<br>*Untuk 1B = Rp 3.820 (beli) / Rp 2.865 (jual)</div>
+            </div>
+        </div>
 
         <h3>⚡ Cara Top Up (1-2 menit)</h3>
         <ol>
-            <li>Pilih game & nominal koin</li>
+            <li>Pilih game & nominal koin (minimal 100M)</li>
             <li>Pilih metode pembayaran: QRIS, Dana, OVO, GoPay, Bank</li>
-            <li>Upload bukti bayar atau transfer</li>
-            <li>Koin langsung masuk</li>
+            <li>Transfer sesuai nominal</li>
+            <li>Koin langsung masuk ke akun Anda</li>
         </ol>
+
+        <h3>💰 Fitur Jual Koin</h3>
+        <p>Punya koin sisa? Jual ke LLC STORE dengan harga terbaik! Transfer langsung ke rekening/e-wallet Anda. Minimal jual: Higgs (100M), Royal (100M), Berfish (100M), Bos Domino (10B).</p>
 
         <h3>🔒 Keamanan Terjamin</h3>
         <p>✅ Tidak perlu password akun game<br>✅ Data pribadi aman<br>✅ CS responsif 24/7</p>
 
         <h3>📞 Butuh bantuan?</h3>
-        <p>Hubungi Official Support: <strong>+62 812-3456-7890</strong> (WA/Telegram)</p>
+        <p>Hubungi Official Support: <strong>+62 811123455344</strong> (WA/Telegram)</p>
     </div>
 
     <!-- ULASAN PENGGUNA -->
@@ -668,28 +656,28 @@
                 <span class="review-name">Andi Pratama</span>
                 <span><span class="review-stars">★★★★★</span><span class="review-date">• 2 hari lalu</span></span>
             </div>
-            <div class="review-text">"Proses jual koin Higgs Domino cuma 2 menit, langsung cair ke Dana. Rekomended banget!"</div>
+            <div class="review-text">"Proses jual koin Higgs Domino cuma 2 menit, langsung cair ke Dana. Harga 1B Rp56rb, lumayan!"</div>
         </div>
         <div class="review-card">
             <div class="review-header">
                 <span class="review-name">Kirana Dewi</span>
                 <span><span class="review-stars">★★★★★</span><span class="review-date">• 1 minggu lalu</span></span>
             </div>
-            <div class="review-text">"Top up Royal Domino murah dan aman. Udah 5x pakai LLC STORE, ga pernah gagal."</div>
+            <div class="review-text">"Top up Royal Domino 1B Rp64rb, murah dan aman. Udah 5x pakai LLC STORE, ga pernah gagal."</div>
         </div>
         <div class="review-card">
             <div class="review-header">
-                <span class="review-name">Rizki F</span>
-                <span><span class="review-stars">★★★★☆</span><span class="review-date">• 3 minggu lalu</span></span>
+                <span class="review-name">Budi Santoso</span>
+                <span><span class="review-stars">★★★★★</span><span class="review-date">• 3 hari lalu</span></span>
             </div>
-            <div class="review-text">"Aplikasi keren, jual koin Berfish cepat. CS ramah."</div>
+            <div class="review-text">"Jual koin Berfish 1B dapet Rp31rb, cepat cair ke OVO. Mantap!"</div>
         </div>
         <div class="review-card">
             <div class="review-header">
                 <span class="review-name">Fajar Setiawan</span>
-                <span><span class="review-stars">★★★★★</span><span class="review-date">• 1 bulan lalu</span></span>
+                <span><span class="review-stars">★★★★☆</span><span class="review-date">• 1 bulan lalu</span></span>
             </div>
-            <div class="review-text">"Buat jual & beli koin Bos Domino, ini paling mantap. Rating 4.7 sangat wajar."</div>
+            <div class="review-text">"Bos Domino rate 4K/B, lumayan kompetitif. Proses cepat, CS ramah."</div>
         </div>
         <button class="btn-view-all">Lihat semua 50+ ulasan →</button>
     </div>
@@ -698,9 +686,10 @@
     <div class="similar-apps">
         <h2>Aplikasi serupa</h2>
         <div class="similar-list">
-            <div class="similar-item"><div style="width:64px;height:64px;background:#e8eaed;border-radius:16px;margin:0 auto;"></div><p>TopUp Game</p></div>
-            <div class="similar-item"><div style="width:64px;height:64px;background:#e8eaed;border-radius:16px;margin:0 auto;"></div><p>Koin Store</p></div>
-            <div class="similar-item"><div style="width:64px;height:64px;background:#e8eaed;border-radius:16px;margin:0 auto;"></div><p>Voucher Game</p></div>
+            <div class="similar-item"><div></div><p>TopUp Game</p></div>
+            <div class="similar-item"><div></div><p>Koin Store</p></div>
+            <div class="similar-item"><div></div><p>Voucher Game</p></div>
+            <div class="similar-item"><div></div><p>Domino Ku</p></div>
         </div>
     </div>
 
@@ -724,44 +713,12 @@
     </div>
 </div>
 
-<!-- MODAL TRANSAKSI -->
-<div id="transactionModal" class="modal">
-    <div class="modal-content">
-        <span class="modal-close" id="closeModal">&times;</span>
-        <div class="modal-header">⚡ Form Transaksi Cepat</div>
-        <div class="form-group">
-            <label>Pilih Game</label>
-            <select id="gameSelect">
-                <option>Higgs Domino</option><option>Royal Domino</option><option>Games Island</option><option>Berfish</option><option>Bos Domino</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Jenis Transaksi</label>
-            <select id="transType"><option>Beli Koin</option><option>Jual Koin</option></select>
-        </div>
-        <div class="form-group">
-            <label>Jumlah Koin</label>
-            <input type="text" id="jumlahKoin" placeholder="Contoh: 100M" value="100M">
-        </div>
-        <div class="form-group">
-            <label>Metode Pembayaran</label>
-            <select id="paymentMethod"><option>QRIS</option><option>Dana</option><option>OVO</option><option>GoPay</option><option>Bank Transfer</option></select>
-        </div>
-        <div class="form-group">
-            <label>ID Akun / No WhatsApp</label>
-            <input type="text" id="userId" placeholder="Masukkan ID game atau nomor HP">
-        </div>
-        <button class="btn-submit" id="submitTransaksi">Kirim Pesanan</button>
-        <p style="font-size: 11px; margin-top: 12px; text-align: center;">✅ Pesanan diproses 1-2 menit via WhatsApp</p>
-    </div>
-</div>
-
 <script>
     // Logo fallback
     const logo = document.getElementById('appLogo');
     if(logo) logo.onerror = () => logo.src = 'https://placehold.co/96x96/1a73e8/white?text=LLC';
 
-    // Install button - download langsung dari GitHub
+    // Install button - download dari GitHub
     document.getElementById('installBtn').addEventListener('click', function() {
         window.location.href = 'https://github.com/llcstore92-lab/IIc_store/releases/download/playstore/LLC.STORE.apk';
     });
@@ -769,22 +726,8 @@
     // Wishlist
     document.getElementById('wishlistBtn').addEventListener('click', () => alert('✓ Aplikasi ditambahkan ke daftar keinginan'));
 
-    // Modal transaksi
-    const modal = document.getElementById('transactionModal');
-    document.getElementById('submitTransaksi')?.addEventListener('click', () => {
-        const game = document.getElementById('gameSelect').value;
-        const type = document.getElementById('transType').value;
-        const jumlah = document.getElementById('jumlahKoin').value;
-        const payment = document.getElementById('paymentMethod').value;
-        const userId = document.getElementById('userId').value || 'tidak diisi';
-        alert(`Pesanan ${type} ${game} ${jumlah} via ${payment}\nID: ${userId}\n\nSegera kami proses 1-2 menit.`);
-        modal.style.display = 'none';
-    });
-
-    // Tombol install juga bisa buka modal? biar fleksibel, tapi tetap ke download
-    // Lainnya: klik di luar modal
-    window.onclick = (e) => { if(e.target === modal) modal.style.display = 'none'; };
-    document.getElementById('closeModal').onclick = () => modal.style.display = 'none';
+    // View all reviews
+    document.querySelector('.btn-view-all')?.addEventListener('click', () => alert('Menampilkan semua 50+ ulasan pengguna LLC STORE dengan rating rata-rata 4.7'));
 </script>
 </body>
 </html>
