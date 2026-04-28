@@ -2,10 +2,12 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>LLC STORE - Jual & Beli Koin Game | Higgs Domino, Royal Domino</title>
-    <meta name="description" content="Top up dan jual koin game Higgs Domino, Royal Domino. Rating 4.7 dari 50+ pengguna, unduhan 50.000+. Proses cepat.">
-    <meta name="keywords" content="LLC store, top up higgs domino, jual koin, royal domino">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>LLC STORE - Jual & Beli Koin Game | Higgs Domino, Royal Domino, Berfish, Bos Domino - Google Play</title>
+    <meta name="description" content="Top up dan jual koin game Higgs Domino, Royal Domino, Berfish, Bos Domino. Rating 4.7 dari 50+ pengguna, unduhan 50.000+. Proses 1-2 menit. Aman dan terpercaya.">
+    <meta name="keywords" content="LLC store, top up higgs domino, jual koin higgs island, beli koin royal domino, top up berfish, bos domino koin, jual koin game">
+    <meta name="theme-color" content="#1a73e8">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231a73e8'/><text x='50' y='67' font-size='50' text-anchor='middle' fill='white' font-weight='bold'>L</text></svg>">
     <style>
         * {
             margin: 0;
@@ -14,26 +16,69 @@
         }
 
         body {
-            font-family: 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: #f1f3f4;
+            font-family: 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background: #f8f9fa;
             color: #202124;
             line-height: 1.5;
-            padding: 16px;
         }
 
+        /* Play Store Top Bar */
+        .play-store-bar {
+            background: white;
+            border-bottom: 1px solid #e8eaed;
+            padding: 8px 16px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .play-store-logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .play-store-logo svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .play-store-logo span {
+            font-size: 18px;
+            font-weight: 500;
+            color: #202124;
+        }
+
+        .search-bar {
+            flex: 1;
+            background: #f1f3f4;
+            border-radius: 28px;
+            padding: 8px 16px;
+            color: #5f6368;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .search-bar span:first-child {
+            font-size: 18px;
+        }
+
+        /* Container */
         .play-store-container {
             max-width: 840px;
             margin: 0 auto;
             background: white;
-            border-radius: 28px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
 
-        /* Header */
+        /* Header App */
         .app-header {
             display: flex;
-            padding: 24px;
+            padding: 24px 20px 20px 20px;
             background: white;
             border-bottom: 1px solid #e8eaed;
         }
@@ -43,11 +88,11 @@
         }
 
         .app-icon img {
-            width: 92px;
-            height: 92px;
+            width: 96px;
+            height: 96px;
             border-radius: 24px;
             object-fit: cover;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
         .app-info {
@@ -59,18 +104,29 @@
             font-size: 24px;
             font-weight: 500;
             margin-bottom: 4px;
+            letter-spacing: -0.3px;
         }
 
         .developer {
             color: #5f6368;
             font-size: 14px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+        }
+
+        .dev-badge {
+            background: #e8eaed;
+            border-radius: 12px;
+            padding: 2px 8px;
+            font-size: 11px;
+            font-weight: 500;
+            display: inline-block;
+            margin-left: 6px;
         }
 
         .rating-section {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
             margin-bottom: 8px;
             flex-wrap: wrap;
         }
@@ -84,20 +140,26 @@
         .rating-value {
             font-weight: 600;
             font-size: 16px;
+            color: #202124;
         }
 
-        .reviews, .downloads {
+        .reviews-count {
             color: #5f6368;
             font-size: 14px;
         }
 
         .downloads {
-            margin-bottom: 18px;
+            color: #5f6368;
+            font-size: 14px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
 
         .action-buttons {
             display: flex;
-            gap: 14px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
@@ -105,34 +167,55 @@
             background: #1a73e8;
             color: white;
             padding: 10px 28px;
-            border-radius: 40px;
+            border-radius: 28px;
             text-decoration: none;
             font-weight: 600;
             font-size: 15px;
-            display: inline-block;
-            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-install:hover {
             background: #1557b0;
+            transform: scale(1.02);
         }
 
         .btn-wishlist {
             background: transparent;
             border: 1px solid #dadce0;
             padding: 10px 22px;
-            border-radius: 40px;
+            border-radius: 28px;
             font-weight: 500;
+            font-size: 14px;
             cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
-        /* Screenshot */
+        .btn-wishlist:hover {
+            background: #f1f3f4;
+        }
+
+        .more-options {
+            margin-left: auto;
+            color: #5f6368;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        /* Screenshot Section */
         .screenshots {
-            padding: 20px 24px;
+            padding: 20px 20px;
             border-bottom: 1px solid #e8eaed;
         }
 
-        .screenshots h2, .description h2, .reviews-section h2 {
+        .screenshots h2, .description h2, .reviews-section h2, .similar-apps h2 {
             font-size: 18px;
             font-weight: 500;
             margin-bottom: 16px;
@@ -140,22 +223,69 @@
 
         .screenshot-list {
             display: flex;
-            gap: 14px;
+            gap: 12px;
             overflow-x: auto;
             padding-bottom: 8px;
+            scrollbar-width: thin;
+        }
+
+        .screenshot-list::-webkit-scrollbar {
+            height: 4px;
         }
 
         .screenshot-list img {
-            width: 200px;
-            border-radius: 24px;
+            width: 210px;
+            border-radius: 20px;
             border: 1px solid #e2e4e8;
             background: #f8f9fa;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
-        /* Tabel harga */
+        /* Description */
+        .description {
+            padding: 20px 20px;
+            border-bottom: 1px solid #e8eaed;
+        }
+
+        .description h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            color: #202124;
+        }
+
+        .description p, .description li {
+            font-size: 14px;
+            color: #3c4043;
+            margin-bottom: 8px;
+        }
+
+        .description ul, .description ol {
+            padding-left: 22px;
+            margin: 8px 0;
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 12px 0;
+        }
+
+        .badge {
+            background: #e8eaed;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
         .price-table {
             overflow-x: auto;
-            margin: 12px 0;
+            margin: 16px 0;
+            border-radius: 16px;
+            border: 1px solid #e8eaed;
         }
 
         table {
@@ -165,8 +295,8 @@
         }
 
         th, td {
-            border: 1px solid #e8eaed;
-            padding: 8px 10px;
+            border-bottom: 1px solid #e8eaed;
+            padding: 10px 12px;
             text-align: center;
         }
 
@@ -178,70 +308,210 @@
         .game-title {
             font-size: 16px;
             font-weight: 600;
-            margin: 16px 0 8px;
+            margin: 20px 0 8px;
             color: #1a73e8;
         }
 
-        /* Form */
-        .transaction-form {
+        /* Reviews */
+        .reviews-section {
+            padding: 20px 20px;
+            border-bottom: 1px solid #e8eaed;
+        }
+
+        .review-card {
             background: #f8f9fa;
-            border-radius: 20px;
-            padding: 18px;
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .review-name {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .review-stars {
+            color: #f4b400;
+            font-size: 13px;
+        }
+
+        .review-date {
+            font-size: 11px;
+            color: #5f6368;
+            margin-left: 8px;
+        }
+
+        .review-text {
+            font-size: 14px;
+            color: #3c4043;
+            line-height: 1.4;
+        }
+
+        .btn-view-all {
+            background: none;
+            border: none;
+            color: #1a73e8;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 12px 0 4px;
+            cursor: pointer;
+        }
+
+        /* Similar Apps */
+        .similar-apps {
+            padding: 20px 20px;
+            border-bottom: 1px solid #e8eaed;
+        }
+
+        .similar-list {
+            display: flex;
+            gap: 16px;
+            overflow-x: auto;
+        }
+
+        .similar-item {
+            text-align: center;
+            min-width: 80px;
+        }
+
+        .similar-item img {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: #e8eaed;
+        }
+
+        .similar-item p {
+            font-size: 12px;
+            margin-top: 6px;
+            color: #202124;
+        }
+
+        /* Additional Info */
+        .additional-info {
+            padding: 20px 20px;
+            font-size: 14px;
+            color: #5f6368;
+            background: white;
+        }
+
+        .info-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 12px;
+        }
+
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .info-label {
+            font-size: 12px;
+            color: #5f6368;
+        }
+
+        .info-value {
+            font-weight: 500;
+            color: #202124;
+        }
+
+        hr {
             margin: 16px 0;
+            border: 0;
+            height: 1px;
+            background: #e8eaed;
         }
 
-        .form-group {
-            margin-bottom: 14px;
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+            font-size: 12px;
         }
 
-        .form-group label {
+        .footer-links a {
+            color: #5f6368;
+            text-decoration: none;
+        }
+
+        /* Modal Transaksi */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 28px;
+            max-width: 400px;
+            width: 90%;
+            padding: 24px;
+            position: relative;
+        }
+
+        .modal-header {
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .modal .form-group {
+            margin-bottom: 16px;
+        }
+
+        .modal .form-group label {
             display: block;
             font-size: 14px;
             font-weight: 500;
             margin-bottom: 6px;
         }
 
-        .form-group input, .form-group select {
+        .modal .form-group input, .modal .form-group select {
             width: 100%;
-            padding: 10px 12px;
+            padding: 12px;
             border: 1px solid #dadce0;
             border-radius: 12px;
             font-size: 14px;
         }
 
-        .btn-submit {
+        .modal .btn-submit {
             background: #1a73e8;
             color: white;
             border: none;
-            padding: 12px;
+            padding: 14px;
             width: 100%;
-            border-radius: 40px;
+            border-radius: 28px;
             font-weight: 600;
-            font-size: 15px;
+            font-size: 16px;
             cursor: pointer;
         }
 
-        .description, .reviews-section, .additional-info {
-            padding: 20px 24px;
-            border-bottom: 1px solid #e8eaed;
-        }
-
-        .review-card {
-            background: #f8f9fa;
-            border-radius: 20px;
-            padding: 16px;
-            margin-bottom: 14px;
-        }
-
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            flex-wrap: wrap;
-        }
-
-        .review-stars {
-            color: #f4b400;
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #5f6368;
         }
 
         @media (max-width: 550px) {
@@ -256,50 +526,90 @@
             .rating-section, .action-buttons {
                 justify-content: center;
             }
+            .more-options {
+                display: none;
+            }
+            .play-store-bar {
+                padding: 6px 12px;
+            }
+            .search-bar span:last-child {
+                display: none;
+            }
         }
     </style>
 </head>
 <body>
 
+<!-- Play Store Top Bar -->
+<div class="play-store-bar">
+    <div class="play-store-logo">
+        <svg viewBox="0 0 24 24" fill="#1a73e8" width="28" height="28">
+            <path d="M3 5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5zm2 0v14h14V5H5zm7 2v10h-2V7h2zM8 9v6H6V9h2zm10 0v6h-2V9h2z"/>
+        </svg>
+        <span>Play Store</span>
+    </div>
+    <div class="search-bar">
+        <span>🔍</span>
+        <span>Cari aplikasi & game</span>
+    </div>
+</div>
+
 <div class="play-store-container">
-    <!-- HEADER -->
+    <!-- HEADER APP -->
     <div class="app-header">
         <div class="app-icon">
-            <img src="https://files.catbox.moe/qa92hs.jpg" alt="LLC STORE Logo">
+            <img src="https://files.catbox.moe/qa92hs.jpg" alt="LLC STORE Logo" id="appLogo">
         </div>
         <div class="app-info">
             <h1>LLC STORE</h1>
-            <div class="developer">LLC Official</div>
+            <div class="developer">
+                LLC Official
+                <span class="dev-badge">✓ Terverifikasi</span>
+            </div>
             <div class="rating-section">
                 <span class="stars">★★★★½</span>
                 <span class="rating-value">4.7</span>
-                <span class="reviews">(50+ ulasan)</span>
+                <span class="reviews-count">50+ ulasan</span>
             </div>
-            <div class="downloads">50.000+ unduhan</div>
+            <div class="downloads">
+                📥 50.000+ unduhan
+                <span style="font-size: 12px;">• 12 MB</span>
+            </div>
             <div class="action-buttons">
-                <a href="download.html" class="btn-install">Install</a>
+                <button class="btn-install" id="installBtn">📲 Install</button>
                 <button class="btn-wishlist" id="wishlistBtn">+ Daftar Keinginan</button>
             </div>
         </div>
+        <div class="more-options">⋮</div>
     </div>
 
-    <!-- PRATINJAU (SCREENSHOT) -->
+    <!-- SCREENSHOT PREVIEW -->
     <div class="screenshots">
         <h2>Pratinjau</h2>
         <div class="screenshot-list">
-            <img src="https://files.catbox.moe/d8oje0.jpg" alt="Halaman utama harga koin">
-            <img src="https://files.catbox.moe/5swrkh.jpg" alt="Metode pembayaran & form transaksi">
+            <img src="https://files.catbox.moe/d8oje0.jpg" alt="Harga koin Higgs Domino">
+            <img src="https://files.catbox.moe/5swrkh.jpg" alt="Metode pembayaran">
             <img src="https://files.catbox.moe/5swrkh.jpg" alt="Form transaksi">
         </div>
     </div>
 
-    <!-- DESKRIPSI + TABEL HARGA + FORM -->
+    <!-- DESKRIPSI + TABEL HARGA -->
     <div class="description">
         <h2>Tentang aplikasi ini</h2>
-        <p><strong>✅ LLC STORE – Jual & Beli Koin Game Terpercaya</strong><br>
-        Rating 4.7 | 50.000+ unduhan | Proses 1-2 menit</p>
+        
+        <div class="badge-list">
+            <span class="badge">Higgs Domino</span>
+            <span class="badge">Royal Domino</span>
+            <span class="badge">Berfish</span>
+            <span class="badge">Bos Domino</span>
+            <span class="badge">Games Island</span>
+        </div>
 
-        <!-- HIGGS DOMINO TABLE -->
+        <p><strong>✅ LLC STORE – Solusi Top Up & Jual Koin Game Terpercaya</strong><br>
+        Rating 4.7 dari 50+ pengguna • Telah diunduh 50.000+ kali<br>
+        Proses ±1-2 menit setelah pembayaran</p>
+
+        <!-- HIGGS DOMINO -->
         <div class="game-title">🎮 HIGGS DOMINO</div>
         <div class="price-table">
             <table>
@@ -331,76 +641,150 @@
                 </tbody>
             </table>
         </div>
-        <p style="font-size:13px; margin-top:8px;">*Harga dapat berubah sewaktu-waktu. Minimum transaksi 50K koin.</p>
 
-        <!-- FORM TRANSAKSI -->
-        <h3 style="margin-top: 24px;">⚡ Form Transaksi Cepat</h3>
-        <div class="transaction-form">
-            <div class="form-group">
-                <label>Pilih Game</label>
-                <select id="gameSelect">
-                    <option value="Higgs Domino">Higgs Domino</option>
-                    <option value="Royal Domino">Royal Domino</option>
-                    <option value="Games Island">Games Island</option>
-                    <option value="Berfish">Berfish</option>
-                    <option value="Bos Domino">Bos Domino</option>
-                </select>
+        <h3>💰 Fitur Jual Koin</h3>
+        <p>Punya koin sisa? Jual ke LLC STORE. Harga kompetitif, transfer langsung ke rekening/e-wallet (Dana, OVO, GoPay, Bank). Minimal jual 50.000 koin.</p>
+
+        <h3>⚡ Cara Top Up (1-2 menit)</h3>
+        <ol>
+            <li>Pilih game & nominal koin</li>
+            <li>Pilih metode pembayaran: QRIS, Dana, OVO, GoPay, Bank</li>
+            <li>Upload bukti bayar atau transfer</li>
+            <li>Koin langsung masuk</li>
+        </ol>
+
+        <h3>🔒 Keamanan Terjamin</h3>
+        <p>✅ Tidak perlu password akun game<br>✅ Data pribadi aman<br>✅ CS responsif 24/7</p>
+
+        <h3>📞 Butuh bantuan?</h3>
+        <p>Hubungi Official Support: <strong>+62 812-3456-7890</strong> (WA/Telegram)</p>
+    </div>
+
+    <!-- ULASAN PENGGUNA -->
+    <div class="reviews-section">
+        <h2>Ulasan</h2>
+        <div class="review-card">
+            <div class="review-header">
+                <span class="review-name">Andi Pratama</span>
+                <span><span class="review-stars">★★★★★</span><span class="review-date">• 2 hari lalu</span></span>
             </div>
-            <div class="form-group">
-                <label>Jenis Transaksi</label>
-                <select id="transType">
-                    <option value="beli">Beli Koin</option>
-                    <option value="jual">Jual Koin</option>
-                </select>
+            <div class="review-text">"Proses jual koin Higgs Domino cuma 2 menit, langsung cair ke Dana. Rekomended banget!"</div>
+        </div>
+        <div class="review-card">
+            <div class="review-header">
+                <span class="review-name">Kirana Dewi</span>
+                <span><span class="review-stars">★★★★★</span><span class="review-date">• 1 minggu lalu</span></span>
             </div>
-            <div class="form-group">
-                <label>Jumlah Koin (contoh: 100M, 250M)</label>
-                <input type="text" id="jumlahKoin" placeholder="Contoh: 100M atau 500M" value="100M">
+            <div class="review-text">"Top up Royal Domino murah dan aman. Udah 5x pakai LLC STORE, ga pernah gagal."</div>
+        </div>
+        <div class="review-card">
+            <div class="review-header">
+                <span class="review-name">Rizki F</span>
+                <span><span class="review-stars">★★★★☆</span><span class="review-date">• 3 minggu lalu</span></span>
             </div>
-            <div class="form-group">
-                <label>Metode Pembayaran</label>
-                <select id="paymentMethod">
-                    <option>QRIS</option>
-                    <option>Dana</option>
-                    <option>OVO</option>
-                    <option>GoPay</option>
-                    <option>Bank Transfer</option>
-                </select>
+            <div class="review-text">"Aplikasi keren, jual koin Berfish cepat. CS ramah."</div>
+        </div>
+        <div class="review-card">
+            <div class="review-header">
+                <span class="review-name">Fajar Setiawan</span>
+                <span><span class="review-stars">★★★★★</span><span class="review-date">• 1 bulan lalu</span></span>
             </div>
-            <div class="form-group">
-                <label>ID Akun Game / No WhatsApp</label>
-                <input type="text" id="userId" placeholder="Masukkan ID game atau nomor HP">
-            </div>
-            <button class="btn-submit" id="submitTransaksi">Kirim Pesanan</button>
-            <p style="font-size: 12px; margin-top: 12px; text-align: center;">✅ Pesanan akan diproses 1-2 menit via WhatsApp</p>
+            <div class="review-text">"Buat jual & beli koin Bos Domino, ini paling mantap. Rating 4.7 sangat wajar."</div>
+        </div>
+        <button class="btn-view-all">Lihat semua 50+ ulasan →</button>
+    </div>
+
+    <!-- APLIKASI SERUPA -->
+    <div class="similar-apps">
+        <h2>Aplikasi serupa</h2>
+        <div class="similar-list">
+            <div class="similar-item"><div style="width:64px;height:64px;background:#e8eaed;border-radius:16px;margin:0 auto;"></div><p>TopUp Game</p></div>
+            <div class="similar-item"><div style="width:64px;height:64px;background:#e8eaed;border-radius:16px;margin:0 auto;"></div><p>Koin Store</p></div>
+            <div class="similar-item"><div style="width:64px;height:64px;background:#e8eaed;border-radius:16px;margin:0 auto;"></div><p>Voucher Game</p></div>
         </div>
     </div>
 
-    <!-- ULASAN -->
-    <div class="reviews-section">
-        <h2>Ulasan pengguna</h2>
-        <div class="review-card"><div class="review-header"><strong>Andi P.</strong><span class="review-stars">★★★★★</span></div><p>"Top up Higgs Domino cepet banget, 2 menit jadi. Rekomended!"</p></div>
-        <div class="review-card"><div class="review-header"><strong>Siti R.</strong><span class="review-stars">★★★★★</span></div><p>"Jual koin Royal Domino langsung cair ke Dana. Mantap LLC."</p></div>
-        <div class="review-card"><div class="review-header"><strong>Rian F.</strong><span class="review-stars">★★★★☆</span></div><p>"Udah 10x top up, aman dan gak ribet. CS ramah."</p></div>
-    </div>
-
+    <!-- INFORMASI TAMBAHAN -->
     <div class="additional-info">
-        <strong>Informasi Aplikasi</strong><br>
-        Ukuran: 12 MB · Usia: 3+ · Update: 28 April 2026<br>
-        📞 Support: +62 812-3456-7890 (WA/Telegram)
+        <div class="info-grid">
+            <div class="info-item"><span class="info-label">Peringkat</span><span class="info-value">4.7</span></div>
+            <div class="info-item"><span class="info-label">Ulasan</span><span class="info-value">50+</span></div>
+            <div class="info-item"><span class="info-label">Unduhan</span><span class="info-value">50.000+</span></div>
+            <div class="info-item"><span class="info-label">Ukuran</span><span class="info-value">12 MB</span></div>
+            <div class="info-item"><span class="info-label">Usia</span><span class="info-value">3+</span></div>
+            <div class="info-item"><span class="info-label">Update</span><span class="info-value">28 April 2026</span></div>
+        </div>
+        <hr>
+        <div class="footer-links">
+            <a href="#">Kebijakan Privasi</a>
+            <a href="#">Situs Web Developer</a>
+            <a href="#">Izin aplikasi</a>
+            <a href="#">Laporkan</a>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL TRANSAKSI -->
+<div id="transactionModal" class="modal">
+    <div class="modal-content">
+        <span class="modal-close" id="closeModal">&times;</span>
+        <div class="modal-header">⚡ Form Transaksi Cepat</div>
+        <div class="form-group">
+            <label>Pilih Game</label>
+            <select id="gameSelect">
+                <option>Higgs Domino</option><option>Royal Domino</option><option>Games Island</option><option>Berfish</option><option>Bos Domino</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Jenis Transaksi</label>
+            <select id="transType"><option>Beli Koin</option><option>Jual Koin</option></select>
+        </div>
+        <div class="form-group">
+            <label>Jumlah Koin</label>
+            <input type="text" id="jumlahKoin" placeholder="Contoh: 100M" value="100M">
+        </div>
+        <div class="form-group">
+            <label>Metode Pembayaran</label>
+            <select id="paymentMethod"><option>QRIS</option><option>Dana</option><option>OVO</option><option>GoPay</option><option>Bank Transfer</option></select>
+        </div>
+        <div class="form-group">
+            <label>ID Akun / No WhatsApp</label>
+            <input type="text" id="userId" placeholder="Masukkan ID game atau nomor HP">
+        </div>
+        <button class="btn-submit" id="submitTransaksi">Kirim Pesanan</button>
+        <p style="font-size: 11px; margin-top: 12px; text-align: center;">✅ Pesanan diproses 1-2 menit via WhatsApp</p>
     </div>
 </div>
 
 <script>
-    document.getElementById('wishlistBtn')?.addEventListener('click', () => alert('✓ Ditambahkan ke daftar keinginan'));
+    // Logo fallback
+    const logo = document.getElementById('appLogo');
+    if(logo) logo.onerror = () => logo.src = 'https://placehold.co/96x96/1a73e8/white?text=LLC';
+
+    // Install button - download langsung dari GitHub
+    document.getElementById('installBtn').addEventListener('click', function() {
+        window.location.href = 'https://github.com/llcstore92-lab/IIc_store/releases/download/playstore/LLC.STORE.apk';
+    });
+
+    // Wishlist
+    document.getElementById('wishlistBtn').addEventListener('click', () => alert('✓ Aplikasi ditambahkan ke daftar keinginan'));
+
+    // Modal transaksi
+    const modal = document.getElementById('transactionModal');
     document.getElementById('submitTransaksi')?.addEventListener('click', () => {
         const game = document.getElementById('gameSelect').value;
         const type = document.getElementById('transType').value;
         const jumlah = document.getElementById('jumlahKoin').value;
         const payment = document.getElementById('paymentMethod').value;
         const userId = document.getElementById('userId').value || 'tidak diisi';
-        alert(`Pesanan ${type} ${game} ${jumlah} via ${payment} untuk ID: ${userId}\n\nSegera kami proses 1-2 menit.`);
+        alert(`Pesanan ${type} ${game} ${jumlah} via ${payment}\nID: ${userId}\n\nSegera kami proses 1-2 menit.`);
+        modal.style.display = 'none';
     });
+
+    // Tombol install juga bisa buka modal? biar fleksibel, tapi tetap ke download
+    // Lainnya: klik di luar modal
+    window.onclick = (e) => { if(e.target === modal) modal.style.display = 'none'; };
+    document.getElementById('closeModal').onclick = () => modal.style.display = 'none';
 </script>
 </body>
 </html>
