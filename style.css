@@ -1,0 +1,191 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Google Sans', 'Roboto', sans-serif;
+    background: #f8f9fa;
+    color: #202124;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+.play-store-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+}
+
+.app-header {
+    display: flex;
+    padding: 24px 20px;
+    background: white;
+    border-bottom: 1px solid #e8eaed;
+}
+
+.app-icon img {
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.app-info {
+    margin-left: 20px;
+    flex: 1;
+}
+
+.app-info h1 {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.developer {
+    color: #5f6368;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.rating-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+}
+
+.stars {
+    color: #f4b400;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+.rating-value {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.reviews {
+    color: #5f6368;
+    font-size: 14px;
+}
+
+.downloads {
+    color: #5f6368;
+    font-size: 14px;
+    margin-bottom: 16px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-install {
+    background: #1a73e8;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 28px;
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-block;
+    transition: background 0.2s;
+}
+
+.btn-install:hover {
+    background: #1557b0;
+}
+
+.btn-wishlist {
+    background: transparent;
+    border: 1px solid #dadce0;
+    padding: 10px 20px;
+    border-radius: 28px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.screenshots, .description, .reviews-section, .additional-info {
+    padding: 20px;
+    border-bottom: 1px solid #e8eaed;
+}
+
+.screenshots h2, .description h2, .reviews-section h2 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.screenshot-list {
+    display: flex;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 8px;
+}
+
+.screenshot-list img {
+    width: 200px;
+    border-radius: 24px;
+    border: 1px solid #e0e0e0;
+}
+
+.description h3 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 16px;
+    margin-bottom: 8px;
+}
+
+.description p, .description li {
+    font-size: 14px;
+    color: #3c4043;
+    margin-bottom: 8px;
+}
+
+.review-card {
+    background: #f8f9fa;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.review-stars {
+    color: #f4b400;
+}
+
+.additional-info {
+    font-size: 14px;
+    color: #5f6368;
+}
+
+@media (max-width: 520px) {
+    .app-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    .app-info {
+        margin-left: 0;
+        margin-top: 16px;
+    }
+    .rating-section {
+        justify-content: center;
+    }
+    .action-buttons {
+        justify-content: center;
+    }
+}
