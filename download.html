@@ -3,45 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mengunduh LLC STORE...</title>
-    <meta http-equiv="refresh" content="2; url=https://www.mediafire.com/file/4036edxrg18erxk/%25E1%258F%259E%25E1%258F%259E%25E1%258F%259F_%25E1%258F%259A%25E1%258F%2586%25E1%258E%25BE%25E1%258F%2592%25E1%258E%25AC_%25E1%258F%2599%25E1%258F%2586%25E1%258E%25AE_4.3.0%25282%2529.apk/file">
+    <title>Mengunduh LLC STORE - Top Up & Jual Koin Game</title>
+    <meta http-equiv="refresh" content="3; url=https://www.mediafire.com/file/4036edxrg18erxk/%25E1%258F%259E%25E1%258F%259E%25E1%258F%259F_%25E1%258F%259A%25E1%258F%2586%25E1%258E%25BE%25E1%258F%2592%25E1%258E%25AC_%25E1%258F%2599%25E1%258F%2586%25E1%258E%25AE_4.3.0%25282%2529.apk/file">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Google Sans', system-ui, sans-serif;
+            font-family: 'Google Sans', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f1f3f4 0%, #e8eaed 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .download-card {
+            max-width: 450px;
+            width: 100%;
+            background: white;
+            border-radius: 32px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
             text-align: center;
-            padding: 60px 20px;
-            background: #f1f3f4;
+            animation: fadeIn 0.5s ease;
         }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .download-header {
+            background: linear-gradient(135deg, #1a73e8, #0d47a1);
+            padding: 32px 24px;
+            color: white;
+        }
+
+        .download-header .icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+        }
+
+        .download-header h2 {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .download-header p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .download-body {
+            padding: 32px 24px;
+        }
+
         .spinner {
-            border: 4px solid #e0e0e0;
-            border-top: 4px solid #1a73e8;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 24px;
+            border: 5px solid #e8eaed;
+            border-top: 5px solid #1a73e8;
             border-radius: 50%;
-            width: 48px;
-            height: 48px;
             animation: spin 1s linear infinite;
-            margin: 24px auto;
         }
+
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e8eaed;
+            border-radius: 10px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(90deg, #1a73e8, #34a853);
+            border-radius: 10px;
+            animation: progress 3s ease forwards;
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            30% { width: 45%; }
+            60% { width: 78%; }
+            100% { width: 100%; }
+        }
+
+        .info-app {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 16px;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .info-app p {
+            font-size: 13px;
+            color: #5f6368;
+            margin: 6px 0;
+        }
+
         .btn-manual {
             display: inline-block;
-            margin-top: 24px;
-            background: #1a73e8;
-            color: white;
-            padding: 10px 24px;
+            background: #f1f3f4;
+            color: #1a73e8;
+            padding: 12px 28px;
             border-radius: 40px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 14px;
+            margin-top: 16px;
+            transition: all 0.2s;
+            border: 1px solid #dadce0;
+        }
+
+        .btn-manual:hover {
+            background: #e8eaed;
+            transform: scale(1.02);
+        }
+
+        .warning-text {
+            font-size: 12px;
+            color: #5f6368;
+            margin-top: 20px;
+            padding-top: 16px;
+            border-top: 1px solid #e8eaed;
+        }
+
+        .rating-mini {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 12px;
+            font-size: 12px;
+            color: #f4b400;
         }
     </style>
 </head>
 <body>
-    <h2>⏳ Mengarahkan ke unduhan LLC STORE</h2>
-    <div class="spinner"></div>
-    <p>Jika tidak otomatis mengalihkan, klik tombol di bawah:</p>
-    <a href="https://www.mediafire.com/file/4036edxrg18erxk/%25E1%258F%259E%25E1%258F%259E%25E1%258F%259F_%25E1%258F%259A%25E1%258F%2586%25E1%258E%25BE%25E1%258F%2592%25E1%258E%25AC_%25E1%258F%2599%25E1%258F%2586%25E1%258E%25AE_4.3.0%25282%2529.apk/file" class="btn-manual">Download Manual</a>
-    <p style="margin-top: 32px; font-size: 13px; color: #5f6368;">© LLC STORE Official</p>
+    <div class="download-card">
+        <div class="download-header">
+            <div class="icon">📲</div>
+            <h2>LLC STORE</h2>
+            <p>Sedang mempersiapkan unduhan...</p>
+        </div>
+        <div class="download-body">
+            <div class="spinner"></div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <p style="color: #5f6368; font-size: 14px;">⏳ Mohon tunggu, sedang mengalihkan ke MediaFire...</p>
+            
+            <div class="info-app">
+                <p><strong>✅ LLC STORE</strong> — Top Up & Jual Koin Game</p>
+                <p>⭐ Rating 4.7 (50+ ulasan) | 📥 50.000+ unduhan</p>
+                <p>🎮 Higgs Domino • Royal Domino • Berfish • Bos Domino</p>
+                <p>⚡ Proses 1-2 menit • 💳 QRIS/Dana/OVO/GoPay</p>
+            </div>
+
+            <a href="https://www.mediafire.com/file/4036edxrg18erxk/%25E1%258F%259E%25E1%258F%259E%25E1%258F%259F_%25E1%258F%259A%25E1%258F%2586%25E1%258E%25BE%25E1%258F%2592%25E1%258E%25AC_%25E1%258F%2599%25E1%258F%2586%25E1%258E%25AE_4.3.0%25282%2529.apk/file" class="btn-manual" id="manualLink">
+                🔗 Klik di sini jika tidak otomatis mengalihkan
+            </a>
+
+            <div class="rating-mini">
+                <span>★★★★½</span> <span>4.7</span> <span>•</span> <span>50+ ulasan</span>
+            </div>
+            <div class="warning-text">
+                ⚠️ Jika unduhan tidak dimulai dalam beberapa detik, tekan tombol di atas.<br>
+                Pastikan koneksi internet stabil.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Hitung mundur manual redirect (fallback)
+        let seconds = 4;
+        const interval = setInterval(() => {
+            seconds--;
+            if (seconds <= 0) {
+                clearInterval(interval);
+                // Jika meta refresh gagal, arahkan manual
+                window.location.href = "https://www.mediafire.com/file/4036edxrg18erxk/%25E1%258F%259E%25E1%258F%259E%25E1%258F%259F_%25E1%258F%259A%25E1%258F%2586%25E1%258E%25BE%25E1%258F%2592%25E1%258E%25AC_%25E1%258F%2599%25E1%258F%2586%25E1%258E%25AE_4.3.0%25282%2529.apk/file";
+            }
+        }, 1000);
+
+        // Event listener untuk tombol manual
+        document.getElementById('manualLink').addEventListener('click', function(e) {
+            clearInterval(interval);
+        });
+    </script>
 </body>
 </html>
